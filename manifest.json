@@ -1,0 +1,14 @@
+{
+	"name": "Fish Balls Eater",
+	"version": "0.1.01",
+	"manifest_version": 2,
+	/*"icons": {
+		"16": "16.png",
+		"48": "48.png",
+		"128": "128.png"
+	},*/
+	"content_scripts": [{
+		"js": ["eater.js"],
+		"matches": ["http://www.douyu.com/*", "https://www.douyu.com/*"]
+	}]
+}
