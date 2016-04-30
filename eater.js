@@ -1,32 +1,16 @@
-var btn = document.querySelector('#right_col_peck > div.peck-status > div.peck-cdn');
-if (btn) {
-	function eat() {
-		var click = document.createEvent('MouseEvents');
-		click.initEvent('click', true, true);
-		btn.dispatchEvent(click);
-	}
-
-	if (btn.innerText === "领取") {
-		eat();
-	}
-
-	/*var text = btn.innerText;
-	btn.innerText = "自动领取ing...";
-	Object.defineProperty(btn, "innerText", {
-		get: function () {
-			return text;
-		},
-		set: function (value) {
-			text = value;
-			if (value === "领取") {
-				eat();
+var rightColPeck = document.querySelector('#right_col_peck');
+var peckCdn = rightColPeck.querySelector('.peck-status .peck-cdn');
+if (peckCdn) {
+	(function() {
+		if (rightColPeck.style.display === "block") {
+			if (peckCdn.innerText === "领取") {
+				var click = document.createEvent('MouseEvents');
+				click.initEvent('click', true, true);
+				peckCdn.dispatchEvent(click);
 			}
+			setTimeout(arguments.callee, 1);
+		} else {
+			setTimeout(arguments.callee, 1000);
 		}
-	});*/
-
-	setInterval(function() {
-		if (btn.innerText === "领取") {
-			eat();
-		}
-	}, 1000);
+	})();
 }
