@@ -8,7 +8,7 @@ if (peckCdn) {
 				click.initEvent('click', true, true);
 				peckCdn.dispatchEvent(click);
 			}
-			setTimeout(arguments.callee, 1);
+			requestAnimationFrame(arguments.callee);
 		} else {
 			setTimeout(arguments.callee, 1000);
 		}
